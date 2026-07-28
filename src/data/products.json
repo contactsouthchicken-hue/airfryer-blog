@@ -3,23 +3,23 @@
   "products": [
     {
       "key": "compact-2L",
-      "name": "Air fryer compact 2-3L",
-      "asin": "ASIN_A_REMPLACER_1",
-      "image": "/images/products/placeholder.svg",
-      "category": "compact",
-      "pitch": "Idéal pour 1 à 2 personnes, encombrement minimal.",
-      "pros": ["Très compact", "Prix d'entrée de gamme", "Facile à ranger"],
-      "cons": ["Capacité limitée", "Peu adapté aux familles"]
-    },
-    {
-      "key": "familial-5L",
       "name": "Moulinex Easy Fry POP EZ2454F0",
       "asin": "B0FVYH1NQ9",
       "image": "/images/products/placeholder.svg",
+      "category": "compact",
+      "pitch": "Écran tactile digital, 10 programmes intuitifs, format pratique.",
+      "pros": ["Écran tactile intuitif", "10 programmes prédéfinis", "Économe en énergie"],
+      "cons": ["Vérifier la taille exacte (3L/5L) sur la fiche produit avant achat"]
+    },
+    {
+      "key": "familial-5L",
+      "name": "Ninja Double Stack XL SL400EUCP",
+      "asin": "B0CZY23DYB",
+      "image": "/images/products/placeholder.svg",
       "category": "familial",
-      "pitch": "5 L, jusqu'à 6 personnes, écran tactile digital, 10 programmes intuitifs.",
-      "pros": ["Bon compromis capacité/encombrement", "Écran tactile intuitif", "10 programmes prédéfinis", "Économe en énergie"],
-      "cons": ["Plus volumineux qu'un modèle compact"]
+      "pitch": "Format vertical Double Stack XL, grande capacité pour toute la famille.",
+      "pros": ["Design vertical gain de place", "Marque reconnue et fiable", "Grande capacité"],
+      "cons": ["Budget plus élevé qu'un modèle simple cuve classique"]
     },
     {
       "key": "double-cuve",
@@ -33,23 +33,23 @@
     },
     {
       "key": "haut-de-gamme-connecte",
-      "name": "Ninja Double Stack XL SL400EUCP",
-      "asin": "B0CZY23DYB",
+      "name": "Philips Air Fryer Série 5000 HD9285/90",
+      "asin": "B0BW4FMR47",
       "image": "/images/products/placeholder.svg",
       "category": "connecte",
-      "pitch": "Format vertical Double Stack XL, marque premium, grande capacité sans encombrement excessif.",
-      "pros": ["Design vertical gain de place", "Marque reconnue et fiable", "Grande capacité"],
+      "pitch": "Connecté, 16 fonctions de cuisson, format XXL 7,2L, technologie RapidAir, écran tactile.",
+      "pros": ["Pilotage connecté", "16 fonctions de cuisson", "Grande capacité 7,2L", "Facile à nettoyer"],
       "cons": ["Budget plus élevé"]
     },
     {
       "key": "petit-budget",
-      "name": "Air fryer petit budget",
-      "asin": "ASIN_A_REMPLACER_5",
+      "name": "GOURMETmaxx Air Fryer 2,3L",
+      "asin": "B0D45677X3",
       "image": "/images/products/placeholder.svg",
       "category": "petit-budget",
-      "pitch": "Pour tester la friture à air chaud sans se ruiner.",
-      "pros": ["Prix très accessible", "Simplicité d'utilisation"],
-      "cons": ["Finitions plus basiques", "Moins de programmes automatiques"]
+      "pitch": "2,3L, écran tactile, 8 fonctions et 7 programmes, pour débuter sans se ruiner.",
+      "pros": ["Prix très accessible", "Écran tactile malgré le petit budget", "Simplicité d'utilisation"],
+      "cons": ["Finitions plus basiques", "Capacité limitée (2,3L)"]
     }
   ]
 }
