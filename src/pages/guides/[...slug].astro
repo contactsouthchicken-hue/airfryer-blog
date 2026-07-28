@@ -12,6 +12,19 @@ export async function getStaticPaths() {
 
 const { guide } = Astro.props;
 const { Content } = await render(guide);
+
+const relatedGuides = (await getCollection('guides', ({ data }) => !data.draft))
+  .filter((g) => g.id !== guide.id && g.data.category === guide.data.category)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3)
+  .map((g) => ({
+    slug: g.id,
+    title: g.data.title,
+    description: g.data.description,
+    category: g.data.category,
+    pubDate: g.data.pubDate,
+    image: g.data.image,
+  }));
 ---
 
 <GuideLayout
@@ -22,6 +35,7 @@ const { Content } = await render(guide);
   updatedDate={guide.data.updatedDate}
   image={guide.data.image}
   keywords={guide.data.keywords}
+  relatedGuides={relatedGuides}
 >
   <Content />
 </GuideLayout>

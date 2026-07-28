@@ -3,6 +3,7 @@ import '../styles/global.css';
 import SEOHead from '../components/SEOHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE } from '../data/site';
 
 interface Props {
   title: string;
@@ -31,6 +32,17 @@ const { title, description, image, type, pubDate, updatedDate, keywords } = Astr
       pubDate={pubDate}
       updatedDate={updatedDate}
       keywords={keywords}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: SITE.name,
+        url: SITE.url,
+        description: SITE.description,
+        inLanguage: SITE.locale,
+      })}
     />
   </head>
   <body class="min-h-screen bg-slate-50 text-slate-800 antialiased">

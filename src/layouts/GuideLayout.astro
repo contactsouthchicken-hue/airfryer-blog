@@ -1,7 +1,18 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GuideCard from '../components/GuideCard.astro';
 import { CATEGORIES } from '../data/site';
+
+interface RelatedGuide {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  pubDate: Date;
+  image: string;
+}
 
 interface Props {
   title: string;
@@ -11,10 +22,12 @@ interface Props {
   updatedDate?: Date;
   image: string;
   keywords: string[];
+  relatedGuides?: RelatedGuide[];
 }
 
-const { title, description, category, pubDate, updatedDate, image, keywords } = Astro.props;
-const categoryLabel = CATEGORIES.find((c) => c.slug === category)?.label ?? category;
+const { title, description, category, pubDate, updatedDate, image, keywords, relatedGuides = [] } = Astro.props;
+const categoryInfo = CATEGORIES.find((c) => c.slug === category);
+const categoryLabel = categoryInfo?.label ?? category;
 ---
 
 <BaseLayout
@@ -26,7 +39,14 @@ const categoryLabel = CATEGORIES.find((c) => c.slug === category)?.label ?? cate
   updatedDate={updatedDate}
   keywords={keywords}
 >
-  <article class="mx-auto max-w-3xl px-4 py-10">
+  <Breadcrumbs
+    items={[
+      { label: categoryLabel, href: `/categorie/${category}/` },
+      { label: title, href: Astro.url.pathname },
+    ]}
+  />
+
+  <article class="mx-auto max-w-3xl px-4 py-6">
     <p class="mb-2 text-sm font-semibold text-orange-600">{categoryLabel}</p>
     <h1 class="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">{title}</h1>
     <div class="mt-3 flex items-center gap-3 text-sm text-slate-500">
@@ -55,4 +75,24 @@ const categoryLabel = CATEGORIES.find((c) => c.slug === category)?.label ?? cate
       <slot />
     </div>
   </article>
+
+  {
+    relatedGuides.length > 0 && (
+      <section class="mx-auto max-w-3xl px-4 pb-16">
+        <h2 class="mb-4 text-xl font-bold text-slate-900">Articles similaires</h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {relatedGuides.map((g) => (
+            <GuideCard
+              slug={g.slug}
+              title={g.title}
+              description={g.description}
+              category={g.category}
+              pubDate={g.pubDate}
+              image={g.image}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
 </BaseLayout>
