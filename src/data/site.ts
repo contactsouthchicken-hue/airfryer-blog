@@ -14,7 +14,7 @@ export const SITE = {
 // Ton identifiant de suivi Amazon Associates (ex: "monsite-21" pour Amazon.fr).
 // Laisse vide tant que ton compte n'est pas approuvé : les liens produits
 // pointeront alors vers Amazon sans tag, mais le site restera fonctionnel.
-export const AMAZON_TRACKING_ID = '';
+export const AMAZON_TRACKING_ID = 'guide2026-21';
 
 // Domaine Amazon à utiliser pour les liens (.fr, .de, .es, .it, .com...)
 export const AMAZON_DOMAIN = 'amazon.fr';
