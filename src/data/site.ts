@@ -9,6 +9,11 @@ export const SITE = {
   locale: 'fr-FR',
   twitter: '', // ex: '@monblog' (laisser vide si aucun compte)
   authorName: 'La Rédaction',
+  // Colle ici le code de vérification fourni par Google Search Console
+  // (méthode "balise HTML", juste le contenu du content="...", pas toute la balise).
+  googleSiteVerification: '',
+  // Idem pour Bing Webmaster Tools (optionnel).
+  bingSiteVerification: '',
 };
 
 // Ton identifiant de suivi Amazon Associates (ex: "monsite-21" pour Amazon.fr).
