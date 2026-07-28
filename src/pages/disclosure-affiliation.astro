@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout title="Disclosure affiliation" description={`Politique d'affiliation de ${SITE.name}`}>
+  <article class="prose prose-slate mx-auto max-w-3xl px-4 py-12">
+    <h1>Disclosure affiliation</h1>
+    <p>
+      {SITE.name} participe au Programme Partenaires d'Amazon EU (Amazon Associates), un
+      programme d'affiliation qui permet à ce site de percevoir une rémunération grâce à la
+      création de liens vers Amazon.fr et les sites Amazon affiliés.
+    </p>
+    <p>
+      Concrètement, lorsque vous cliquez sur un lien Amazon présent sur ce site et effectuez un
+      achat, nous pouvons percevoir une petite commission. <strong>Cela ne change rien au prix
+      que vous payez</strong> et n'a aucune incidence sur votre expérience d'achat.
+    </p>
+    <p>
+      Cette rémunération nous permet de financer le temps passé à rechercher, comparer et rédiger
+      nos guides. Elle n'influence pas notre sélection : nous nous efforçons de présenter des
+      avantages et inconvénients objectifs pour chaque produit mentionné.
+    </p>
+    <p>Amazon et le logo Amazon sont des marques déposées d'Amazon.com, Inc. ou de ses filiales.</p>
+  </article>
+</BaseLayout>

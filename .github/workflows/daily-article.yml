@@ -1,0 +1,50 @@
+name: Publication quotidienne d'un guide air fryer
+
+on:
+  schedule:
+    # 06h00 UTC = 07h/08h heure de Paris selon la saison. Ajuste si besoin.
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-article
+  cancel-in-progress: false
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Générer l'article du jour
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run generate
+
+      - name: Vérifier que le site compile (garde-fou avant publication)
+        run: npm run build
+
+      - name: Commit et push du nouvel article
+        run: |
+          git config user.name "airfryer-blog-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/content/guides scripts/state/used-topics.json
+          if git diff --cached --quiet; then
+            echo "Aucun changement à publier."
+          else
+            git commit -m "Ajoute le guide quotidien du $(date -u +%Y-%m-%d)"
+            git push
+          fi

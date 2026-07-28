@@ -1,0 +1,55 @@
+{
+  "_instructions": "Remplace chaque \"asin\" par le véritable ASIN Amazon du produit (visible dans l'URL du produit ou dans la section 'Informations sur le produit'). N'affiche jamais de prix fixe en dur dans le contenu : les règles Amazon Associates interdisent les prix statiques qui peuvent devenir obsolètes. Le composant ProductCard renvoie donc toujours vers Amazon pour le prix à jour au lieu de l'afficher ici.",
+  "products": [
+    {
+      "key": "compact-2L",
+      "name": "Air fryer compact 2-3L",
+      "asin": "ASIN_A_REMPLACER_1",
+      "image": "/images/products/placeholder.svg",
+      "category": "compact",
+      "pitch": "Idéal pour 1 à 2 personnes, encombrement minimal.",
+      "pros": ["Très compact", "Prix d'entrée de gamme", "Facile à ranger"],
+      "cons": ["Capacité limitée", "Peu adapté aux familles"]
+    },
+    {
+      "key": "familial-5L",
+      "name": "Air fryer familial 5-6L",
+      "asin": "ASIN_A_REMPLACER_2",
+      "image": "/images/products/placeholder.svg",
+      "category": "familial",
+      "pitch": "Le format le plus polyvalent, pour 3 à 5 personnes.",
+      "pros": ["Bon compromis capacité/encombrement", "Nombreux programmes"],
+      "cons": ["Plus volumineux qu'un modèle compact"]
+    },
+    {
+      "key": "double-cuve",
+      "name": "Air fryer double cuve",
+      "asin": "ASIN_A_REMPLACER_3",
+      "image": "/images/products/placeholder.svg",
+      "category": "double-cuve",
+      "pitch": "Deux paniers indépendants pour cuire deux aliments différents en même temps.",
+      "pros": ["Gain de temps", "Deux textures/températures simultanées"],
+      "cons": ["Plus cher", "Prend plus de place au plan de travail"]
+    },
+    {
+      "key": "haut-de-gamme-connecte",
+      "name": "Air fryer connecté haut de gamme",
+      "asin": "ASIN_A_REMPLACER_4",
+      "image": "/images/products/placeholder.svg",
+      "category": "connecte",
+      "pitch": "Pilotage via application, nombreux capteurs, matériaux premium.",
+      "pros": ["Application mobile", "Précision de cuisson", "Design soigné"],
+      "cons": ["Budget plus élevé"]
+    },
+    {
+      "key": "petit-budget",
+      "name": "Air fryer petit budget",
+      "asin": "ASIN_A_REMPLACER_5",
+      "image": "/images/products/placeholder.svg",
+      "category": "petit-budget",
+      "pitch": "Pour tester la friture à air chaud sans se ruiner.",
+      "pros": ["Prix très accessible", "Simplicité d'utilisation"],
+      "cons": ["Finitions plus basiques", "Moins de programmes automatiques"]
+    }
+  ]
+}

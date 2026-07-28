@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GuideCard from '../components/GuideCard.astro';
+import { SITE, CATEGORIES } from '../data/site';
+
+const allGuides = (await getCollection('guides', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const latestGuides = allGuides.slice(0, 9);
+---
+
+<BaseLayout title={SITE.name} description={SITE.description}>
+  <section class="bg-white">
+    <div class="mx-auto max-w-5xl px-4 py-16 text-center">
+      <h1 class="text-3xl font-bold text-slate-900 sm:text-4xl">{SITE.tagline}</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-slate-600">{SITE.description}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-4 py-10">
+    <div class="mb-6 flex flex-wrap gap-3">
+      {
+        CATEGORIES.map((cat) => (
+          <a
+            href={`/categorie/${cat.slug}/`}
+            class="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-medium text-slate-700 hover:border-orange-300 hover:text-orange-600"
+          >
+            {cat.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <h2 class="mb-4 text-xl font-bold text-slate-900">Derniers articles</h2>
+    {
+      latestGuides.length === 0 ? (
+        <p class="text-slate-500">
+          Aucun article publié pour le moment. Le premier guide arrive bientôt !
+        </p>
+      ) : (
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {latestGuides.map((guide) => (
+            <GuideCard
+              slug={guide.id}
+              title={guide.data.title}
+              description={guide.data.description}
+              category={guide.data.category}
+              pubDate={guide.data.pubDate}
+              image={guide.data.image}
+            />
+          ))}
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout title="À propos" description={`À propos de ${SITE.name}`}>
+  <article class="prose prose-slate mx-auto max-w-3xl px-4 py-12">
+    <h1>À propos de {SITE.name}</h1>
+    <p>
+      {SITE.name} est un site indépendant dédié aux friteuses à air chaud (air fryers). Nous
+      publions des comparatifs, des guides d'achat et des avis pour aider nos lecteurs à choisir
+      l'appareil le plus adapté à leurs besoins.
+    </p>
+    <p>
+      <strong>À personnaliser :</strong> remplace ce texte par une présentation réelle de ton
+      projet (qui es-tu, pourquoi ce site, comment sont sélectionnés les produits, etc.).
+    </p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+import { CATEGORIES } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  image: string;
+  keywords: string[];
+}
+
+const { title, description, category, pubDate, updatedDate, image, keywords } = Astro.props;
+const categoryLabel = CATEGORIES.find((c) => c.slug === category)?.label ?? category;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={image}
+  type="article"
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  keywords={keywords}
+>
+  <article class="mx-auto max-w-3xl px-4 py-10">
+    <p class="mb-2 text-sm font-semibold text-orange-600">{categoryLabel}</p>
+    <h1 class="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">{title}</h1>
+    <div class="mt-3 flex items-center gap-3 text-sm text-slate-500">
+      <time datetime={pubDate.toISOString()}>
+        Publié le {pubDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+      </time>
+      {
+        updatedDate && (
+          <span>
+            · Mis à jour le{' '}
+            {updatedDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+          </span>
+        )
+      }
+    </div>
+
+    <img src={image} alt={title} class="mt-6 aspect-video w-full rounded-xl object-cover" />
+
+    <div class="mt-8">
+      <AffiliateDisclosure />
+    </div>
+
+    <div
+      class="prose prose-slate mt-4 max-w-none prose-headings:font-bold prose-a:text-orange-600 prose-img:rounded-xl"
+    >
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

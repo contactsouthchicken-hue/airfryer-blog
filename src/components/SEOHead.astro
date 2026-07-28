@@ -1,0 +1,68 @@
+---
+import { SITE } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalPath?: string;
+  type?: 'website' | 'article';
+  pubDate?: Date;
+  updatedDate?: Date;
+  keywords?: string[];
+}
+
+const {
+  title,
+  description,
+  image = '/images/products/placeholder.svg',
+  canonicalPath = Astro.url.pathname,
+  type = 'website',
+  pubDate,
+  updatedDate,
+  keywords = [],
+} = Astro.props;
+
+const canonicalURL = new URL(canonicalPath, SITE.url);
+const imageURL = new URL(image, SITE.url);
+const fullTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+<link rel="canonical" href={canonicalURL} />
+
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:locale" content={SITE.locale.replace('-', '_')} />
+<meta property="og:site_name" content={SITE.name} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+{SITE.twitter && <meta name="twitter:site" content={SITE.twitter} />}
+
+{
+  type === 'article' && pubDate && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        description,
+        image: imageURL.toString(),
+        datePublished: pubDate.toISOString(),
+        dateModified: (updatedDate ?? pubDate).toISOString(),
+        author: { '@type': 'Organization', name: SITE.authorName },
+        publisher: { '@type': 'Organization', name: SITE.name },
+        mainEntityOfPage: canonicalURL.toString(),
+      })}
+    />
+  )
+}

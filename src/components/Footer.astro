@@ -1,0 +1,21 @@
+---
+import { SITE } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-16 border-t border-slate-200 bg-slate-50">
+  <div class="mx-auto max-w-5xl px-4 py-10 text-sm text-slate-600">
+    <p class="mb-4">
+      En tant que Partenaire Amazon, {SITE.name} réalise un bénéfice sur les achats
+      remplissant les conditions requises. Les liens vers Amazon présents sur ce site
+      sont des liens d'affiliation.
+    </p>
+    <nav class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="/a-propos/" class="hover:text-orange-600">À propos</a>
+      <a href="/mentions-legales/" class="hover:text-orange-600">Mentions légales</a>
+      <a href="/confidentialite/" class="hover:text-orange-600">Confidentialité</a>
+      <a href="/disclosure-affiliation/" class="hover:text-orange-600">Disclosure affiliation</a>
+    </nav>
+    <p class="mt-6 text-slate-400">© {year} {SITE.name}. Tous droits réservés.</p>
+  </div>
+</footer>

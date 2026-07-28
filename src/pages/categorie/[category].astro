@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuideCard from '../../components/GuideCard.astro';
+import { CATEGORIES, SITE } from '../../data/site';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map((cat) => ({
+    params: { category: cat.slug },
+    props: { cat },
+  }));
+}
+
+const { cat } = Astro.props;
+const guides = (await getCollection('guides', ({ data }) => !data.draft && data.category === cat.slug)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title={`${cat.label} – ${SITE.name}`}
+  description={cat.description}
+>
+  <section class="mx-auto max-w-5xl px-4 py-10">
+    <h1 class="text-2xl font-bold text-slate-900">{cat.label}</h1>
+    <p class="mt-2 text-slate-600">{cat.description}</p>
+
+    {
+      guides.length === 0 ? (
+        <p class="mt-8 text-slate-500">Aucun article dans cette catégorie pour le moment.</p>
+      ) : (
+        <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {guides.map((guide) => (
+            <GuideCard
+              slug={guide.id}
+              title={guide.data.title}
+              description={guide.data.description}
+              category={guide.data.category}
+              pubDate={guide.data.pubDate}
+              image={guide.data.image}
+            />
+          ))}
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>

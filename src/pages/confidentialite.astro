@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout title="Politique de confidentialité" description={`Politique de confidentialité de ${SITE.name}`}>
+  <article class="prose prose-slate mx-auto max-w-3xl px-4 py-12">
+    <h1>Politique de confidentialité</h1>
+    <p>
+      <strong>⚠️ À compléter avant mise en ligne :</strong> si tu utilises un outil d'analytics
+      (Google Analytics, Plausible...) ou des cookies, le RGPD impose une politique de
+      confidentialité précise et, souvent, un bandeau de consentement. Adapte ce texte à ce que
+      ton site collecte réellement.
+    </p>
+    <h2>Données collectées</h2>
+    <p>[à compléter selon les outils utilisés : analytics, cookies, formulaires...]</p>
+    <h2>Liens d'affiliation</h2>
+    <p>
+      Ce site contient des liens d'affiliation Amazon. Amazon peut déposer ses propres cookies
+      lorsque vous cliquez sur ces liens, conformément à sa propre politique de confidentialité.
+    </p>
+    <h2>Vos droits</h2>
+    <p>
+      Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression
+      de vos données. Contact : [email à compléter]
+    </p>
+  </article>
+</BaseLayout>

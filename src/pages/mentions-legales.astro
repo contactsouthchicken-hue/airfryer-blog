@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+
+<BaseLayout title="Mentions légales" description={`Mentions légales de ${SITE.name}`}>
+  <article class="prose prose-slate mx-auto max-w-3xl px-4 py-12">
+    <h1>Mentions légales</h1>
+    <p>
+      <strong>⚠️ À compléter avant mise en ligne :</strong> en France, les mentions légales sont
+      obligatoires (loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique).
+      Ce texte est un gabarit générique, pas un contenu juridique validé — fais-le relire par un
+      professionnel si besoin.
+    </p>
+    <h2>Éditeur du site</h2>
+    <p>
+      Nom / raison sociale : [à compléter]<br />
+      Statut (particulier, auto-entrepreneur, société...) : [à compléter]<br />
+      Adresse : [à compléter]<br />
+      Email de contact : [à compléter]<br />
+      Numéro SIRET (si applicable) : [à compléter]
+    </p>
+    <h2>Hébergement</h2>
+    <p>
+      Hébergeur : [à compléter, ex. Vercel Inc. / Netlify Inc.]<br />
+      Adresse de l'hébergeur : [à compléter]
+    </p>
+    <h2>Programme d'affiliation</h2>
+    <p>
+      {SITE.name} participe au Programme Partenaires d'Amazon EU, un programme d'affiliation
+      conçu pour permettre à des sites de percevoir une rémunération grâce à la création de liens
+      vers Amazon.fr.
+    </p>
+  </article>
+</BaseLayout>

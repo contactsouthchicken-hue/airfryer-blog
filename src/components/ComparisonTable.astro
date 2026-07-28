@@ -1,0 +1,46 @@
+---
+import { buildAmazonLink, getProduct } from '../lib/amazon';
+
+interface Props {
+  productKeys: string[];
+}
+
+const { productKeys } = Astro.props;
+const products = productKeys.map(getProduct).filter((p) => p !== undefined);
+---
+
+{
+  products.length > 0 && (
+    <div class="not-prose my-8 overflow-x-auto rounded-xl border border-slate-200">
+      <table class="w-full min-w-[560px] border-collapse text-sm">
+        <thead>
+          <tr class="bg-slate-100 text-left">
+            <th class="p-3 font-semibold text-slate-700">Modèle</th>
+            <th class="p-3 font-semibold text-slate-700">Points forts</th>
+            <th class="p-3 font-semibold text-slate-700">Points faibles</th>
+            <th class="p-3 font-semibold text-slate-700">Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr class="border-t border-slate-200 align-top">
+              <td class="p-3 font-medium text-slate-900">{product!.name}</td>
+              <td class="p-3 text-green-700">{product!.pros.join(', ')}</td>
+              <td class="p-3 text-red-700">{product!.cons.join(', ')}</td>
+              <td class="p-3">
+                <a
+                  href={buildAmazonLink(product!.asin)}
+                  target="_blank"
+                  rel="nofollow sponsored noopener"
+                  class="font-semibold text-orange-600 hover:underline"
+                >
+                  Voir sur Amazon
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}

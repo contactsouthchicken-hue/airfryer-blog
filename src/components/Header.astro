@@ -1,0 +1,20 @@
+---
+import { SITE, CATEGORIES } from '../data/site';
+---
+
+<header class="border-b border-slate-200 bg-white">
+  <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4">
+    <a href="/" class="text-xl font-bold text-slate-900">
+      🍳 {SITE.name}
+    </a>
+    <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-slate-600">
+      {
+        CATEGORIES.map((cat) => (
+          <a href={`/categorie/${cat.slug}/`} class="hover:text-orange-600">
+            {cat.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

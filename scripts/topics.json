@@ -1,0 +1,65 @@
+{
+  "comparatifs": {
+    "seeds": [
+      "Simple cuve vs double cuve",
+      "Modèle compact vs modèle familial",
+      "Entrée de gamme vs haut de gamme",
+      "Air fryer connecté vs air fryer classique",
+      "Air fryer vs four traditionnel",
+      "Air fryer vs friteuse à huile classique",
+      "Air fryer vs four à convection",
+      "Design rond vs design carré/tiroir",
+      "Grande marque vs marque moins connue",
+      "Air fryer avec écran tactile vs boutons mécaniques"
+    ]
+  },
+  "guides-complets": {
+    "seeds": [
+      "Guide pour un étudiant en studio",
+      "Guide pour une famille nombreuse",
+      "Guide pour une personne vivant seule",
+      "Guide pour les seniors",
+      "Guide pour une colocation",
+      "Guide pour le sportif adepte du meal prep",
+      "Guide pour une alimentation healthy et sans huile",
+      "Guide petit budget",
+      "Guide pour cuisiner pour bébé et jeunes enfants",
+      "Guide pour le batch cooking du dimanche",
+      "Guide sur la capacité idéale selon le foyer",
+      "Guide sur la puissance et la consommation électrique",
+      "Guide sur les accessoires indispensables",
+      "Guide sur les matériaux (revêtement, sans PFAS)",
+      "Guide pour bien choisir sa première friteuse à air chaud"
+    ]
+  },
+  "avis": {
+    "seeds": [
+      "Test d'un modèle familial polyvalent",
+      "Test d'un modèle compact pour studio",
+      "Test d'un modèle double cuve",
+      "Test d'un modèle connecté haut de gamme",
+      "Test d'un modèle économique premier prix",
+      "Test d'un modèle particulièrement silencieux",
+      "Test d'un modèle avec de nombreux programmes automatiques",
+      "Test d'un modèle au design rétro"
+    ]
+  },
+  "astuces": {
+    "seeds": [
+      "Bien nettoyer et entretenir son air fryer",
+      "Réussir des légumes croustillants",
+      "Cuire une viande parfaitement juteuse",
+      "Réaliser des desserts à l'air fryer",
+      "Les erreurs à éviter quand on débute",
+      "Réduire sa consommation d'huile au quotidien",
+      "Recettes rapides pour la semaine",
+      "Bien cuire des surgelés à l'air fryer",
+      "Préparer un brunch complet à l'air fryer",
+      "Recettes végétariennes et véganes",
+      "Sécurité et bonnes pratiques d'utilisation",
+      "Comparer les temps de cuisson air fryer vs four",
+      "Astuces pour gagner du temps en cuisine",
+      "Comment réchauffer ses restes à l'air fryer"
+    ]
+  }
+}
