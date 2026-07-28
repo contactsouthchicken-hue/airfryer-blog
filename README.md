@@ -163,3 +163,4 @@ scripts/
 | `npm run build`       | Build de production dans `./dist/`                      |
 | `npm run preview`     | Prévisualise le build de production en local            |
 | `npm run generate`    | Génère manuellement l'article du jour (nécessite une clé API) |
+
