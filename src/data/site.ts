@@ -11,7 +11,7 @@ export const SITE = {
   authorName: 'La Rédaction',
   // Colle ici le code de vérification fourni par Google Search Console
   // (méthode "balise HTML", juste le contenu du content="...", pas toute la balise).
-  googleSiteVerification: '',
+  googleSiteVerification: 'lXVuSY_J3Q2pL083hbkxGLGSZ6pF3u8ThtCOZzRPmTw',
   // Idem pour Bing Webmaster Tools (optionnel).
   bingSiteVerification: '',
 };
