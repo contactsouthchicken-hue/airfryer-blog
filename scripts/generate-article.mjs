@@ -50,6 +50,11 @@ Règles impératives :
 - Structure obligatoire en Markdown : un titre H1 implicite (le champ "title" séparé, ne pas
   le remettre en H1 dans le corps), puis des sections avec des titres H2 ("## ..."), et des
   sous-sections H3 si utile.
+- N'inclus JAMAIS une année spécifique (ex: "en 2024", "en 2025") dans le titre, la
+  description ou le corps de l'article, sauf si l'année exacte t'est explicitement donnée
+  dans le message utilisateur. Un article daté de façon incorrecte ou qui se périme vite nuit
+  au SEO. Préfère des formulations intemporelles ("aujourd'hui", "actuellement", ou pas de
+  référence temporelle du tout).
 - Longueur cible : environ 2500 mots (accepte 2300 à 2800).
 - Inclus une introduction qui accroche (problème du lecteur) et annonce ce que l'article va
   couvrir, plusieurs sections de développement, une section "Foire aux questions" avec 4 à 6
