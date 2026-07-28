@@ -5,9 +5,9 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-// IMPORTANT : remplace cette URL par ton vrai nom de domaine une fois acheté.
-// Elle est utilisée pour générer le sitemap.xml, les balises canonical et les URLs Open Graph.
-const SITE_URL = 'https://exemple-airfryer-guide.fr';
+// Domaine du site (à acheter chez un registrar : Gandi, OVH, Namecheap...).
+// Utilisée pour générer le sitemap.xml, les balises canonical et les URLs Open Graph.
+const SITE_URL = 'https://guide-airfryer.fr';
 
 // https://astro.build/config
 export default defineConfig({

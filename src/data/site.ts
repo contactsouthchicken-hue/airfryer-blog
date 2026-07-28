@@ -5,7 +5,7 @@ export const SITE = {
   tagline: 'Comparatifs, guides et avis sur les friteuses à air chaud',
   description:
     "Le guide indépendant des friteuses à air chaud : comparatifs, tests, guides d'achat et astuces pour bien choisir votre air fryer.",
-  url: 'https://exemple-airfryer-guide.fr', // doit correspondre à `site` dans astro.config.mjs
+  url: 'https://guide-airfryer.fr', // doit correspondre à `site` dans astro.config.mjs
   locale: 'fr-FR',
   twitter: '', // ex: '@monblog' (laisser vide si aucun compte)
   authorName: 'La Rédaction',

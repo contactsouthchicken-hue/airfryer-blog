@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://exemple-airfryer-guide.fr/sitemap-index.xml
+Sitemap: https://guide-airfryer.fr/sitemap-index.xml
