@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgs" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#ffedd5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgs)"/>
+
+  <!-- air fryer -->
+  <g transform="translate(300,120)">
+    <rect x="-75" y="0" width="150" height="185" rx="22" fill="#1e293b"/>
+    <rect x="-75" y="0" width="150" height="42" rx="22" fill="#334155"/>
+    <circle cx="48" cy="21" r="11" fill="#f97316"/>
+    <rect x="-58" y="65" width="116" height="105" rx="10" fill="#475569"/>
+    <rect x="-46" y="76" width="92" height="82" rx="8" fill="#64748b"/>
+  </g>
+
+  <!-- lightbulb idea -->
+  <g transform="translate(570,150)">
+    <circle cx="0" cy="-10" r="55" fill="#fde68a"/>
+    <path d="M-22,-10 a22,22 0 1 1 44,0 c0,14 -10,18 -12,32 h-20 c-2,-14 -12,-18 -12,-32 Z" fill="#f97316"/>
+    <rect x="-14" y="22" width="28" height="12" rx="4" fill="#78350f"/>
+    <rect x="-10" y="34" width="20" height="8" rx="3" fill="#78350f"/>
+    <line x1="-70" y1="-50" x2="-90" y2="-65" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/>
+    <line x1="70" y1="-50" x2="90" y2="-65" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="-85" x2="0" y2="-105" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

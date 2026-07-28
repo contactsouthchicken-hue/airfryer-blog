@@ -34,6 +34,13 @@ const CATEGORY_LABELS = {
   astuces: 'Astuces & recettes',
 };
 
+const CATEGORY_IMAGES = {
+  comparatifs: '/images/guides/comparatifs.svg',
+  'guides-complets': '/images/guides/guides-complets.svg',
+  avis: '/images/guides/avis.svg',
+  astuces: '/images/guides/astuces.svg',
+};
+
 function loadProducts() {
   const data = JSON.parse(readFileSync(PRODUCTS_PATH, 'utf8'));
   return data.products;
@@ -177,7 +184,7 @@ keywords:
 ${yamlKeywords || '  []'}
 featuredProducts:
 ${yamlFeatured || '  []'}
-image: "/images/products/placeholder.svg"
+image: ${JSON.stringify(CATEGORY_IMAGES[category])}
 generatedBy: "ai-daily"
 ---`;
 }

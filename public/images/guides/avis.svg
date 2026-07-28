@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bga" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#ffedd5"/>
+    </linearGradient>
+    <path id="star" d="M0,-22 L6,-7 L22,-7 L9,3 L14,19 L0,9 L-14,19 L-9,3 L-22,-7 L-6,-7 Z"/>
+  </defs>
+  <rect width="800" height="450" fill="url(#bga)"/>
+
+  <!-- air fryer -->
+  <g transform="translate(300,120)">
+    <rect x="-75" y="0" width="150" height="185" rx="22" fill="#1e293b"/>
+    <rect x="-75" y="0" width="150" height="42" rx="22" fill="#334155"/>
+    <circle cx="48" cy="21" r="11" fill="#f97316"/>
+    <rect x="-58" y="65" width="116" height="105" rx="10" fill="#475569"/>
+    <rect x="-46" y="76" width="92" height="82" rx="8" fill="#64748b"/>
+  </g>
+
+  <!-- rating card -->
+  <g transform="translate(560,150)">
+    <rect x="-100" y="-30" width="200" height="120" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <use href="#star" x="-72" y="10" fill="#f97316"/>
+    <use href="#star" x="-36" y="10" fill="#f97316"/>
+    <use href="#star" x="0" y="10" fill="#f97316"/>
+    <use href="#star" x="36" y="10" fill="#f97316"/>
+    <use href="#star" x="72" y="10" fill="#fdba74"/>
+    <text x="0" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#334155">Avis testé</text>
+  </g>
+</svg>
